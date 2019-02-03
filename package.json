@@ -1,7 +1,7 @@
 {
     "name": "@silvanite/vue-instagram",
     "version": "1.0.0",
-    "description": "Boilerplate repository for creating new Laravel or Javascript/Vue NPM packages",
+    "description": "A Vue.js Instagram component to display the authenticated user's feed",
     "main": "dist-js/index.js",
     "files": [
         "dist-js/**/*",

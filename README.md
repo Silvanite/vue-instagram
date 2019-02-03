@@ -1,11 +1,31 @@
-# Boilerplate repository for creating PHP Laravel and JS Vue NPM Packages
+# A Vue.js Instagram component to display the authenticated user's feed
 
-This boilderplate is ready to be published to Packagist and NPM JS.
+This component is based on [Kevin Ongko's](https://github.com/kevinongko/vue-instagram) vue-instagram package but with an axios integration and personalised build tools to enable it to work in Node based environments (Vuepress with SSR in my case).
 
-## Usage
+## Installation
 
-Simply fork this repository and customise. Search and Replace (case-sensitive) `Silvanite` and `VueInstagram` as well as `silvanite` and `vue-instagram` to get started.
+```sh
+npm i @silvanite/vue-instagram
+```
 
-## Publishing
+```js
+import Vue from 'vue'
+import VueInstagram from '@silvanite/vue-instagram'
 
-Always use `npm version (major|minor|patch)` to publish new versions (even when working with PHP). This will automatically create the git tag for you which Packagist will then pick up for version publishing.
+Vue.use(VueInstagram)
+```
+
+## Usage
+
+```html
+<template>
+    <vue-instagram token="accessTokenHere" :count="5" :tags="['hashtag1', 'hashtag2']" mediaType="image">
+        <template slot="feeds" slot-scope="{ feed }">
+            <div> {{ feed.link }} </div>
+        </template>
+        <template slot="error" slot-scope="{ feed }">
+            <div> {{ feed.error.error_message }} </div>
+        </template>
+    </vue-instagram>
+</template>
+```
