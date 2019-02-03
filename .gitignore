@@ -1,0 +1,5 @@
+/vendor/
+/node_modules/
+/dist-js/
+.vs
+package-lock.json
